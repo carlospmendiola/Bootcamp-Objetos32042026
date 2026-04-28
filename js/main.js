@@ -1,14 +1,14 @@
 // 1. Crear un objeto Persona
 // Enunciado: Crea un objeto persona que tenga las propiedades: nombre, edad, y ciudad. Luego, imprime cada propiedad por separado en la consola.
 
-/* var datosPersona = {
+var datosPersona = {
   nombre: 'carlos',
   edad: 28,
   ciudad:'Tokyo'
-}; */
-// console.log(datosPersona.nombre);
-// console.log(datosPersona.edad);
-// console.log(datosPersona.ciudad);
+};
+console.log(datosPersona.nombre);
+console.log(datosPersona.edad);
+console.log(datosPersona.ciudad);
 
 // 2. Modificar propiedades
 // Enunciado: A partir del objeto persona anterior, cambia el valor de la propiedad ciudad y añade una nueva propiedad llamada profesión. Luego, imprime el objeto actualizado en la consola.
@@ -19,8 +19,8 @@ var datosPersona = {
 };
 datosPersona.ciudad = 'Kyoto';
 datosPersona.profesion = 'Diseniador';
-// console.log(datosPersona.ciudad);
-// console.log(datosPersona.profesion);
+console.log(datosPersona.ciudad);
+console.log(datosPersona.profesion);
 
 // 3. Objeto Libro
 // Enunciado: Crea un objeto llamado libro con las propiedades titulo, autor, y añoPublicacion. Añade un método llamado resumen que devuelva una cadena con un resumen del libro. Ejemplo de salida: "El libro 'Cien años de soledad' fue escrito por Gabriel García Márquez en 1967."
@@ -32,7 +32,7 @@ var libro = {
     return `El libro '${this.titulo}' fue escrito por ${this.autor} en ${this.anio}`
   }
 };
-// console.log(libro.resumen());
+console.log(libro.resumen());
 
 // 4. Array de objetos
 // Enunciado: Crea un array llamado estudiantes que contenga tres objetos. Cada objeto debe representar un estudiante con las propiedades: nombre, edad, y notaFinal. Luego, recorre el array e imprime el nombre y la nota final de cada estudiante.
@@ -46,12 +46,49 @@ for (let i=0; i<estudiantes.length; i++) {
   console.log(`El nombre es '${estudiantes[i].nombre}' y la nota final es ${estudiantes[i].notaFinal}`);
 }
 
-
 // 5. Método para calcular la edad
 // Enunciado: Crea un objeto persona con las propiedades nombre, anioNacimiento, y un método llamado calcularEdad que devuelva la edad actual de la persona basado en el año de nacimiento.
+const persona = {
+  nombre: 'Andoni',
+  anioNacimiento: 1975,
+  calculaEdad: function () {
+    var today = new Date();
+    var year = today.getFullYear();
+  return (`La edad es de ${year - this.anioNacimiento} años`);
+  }
+  
+}
+console.log(persona.calculaEdad());
 
 // 6. Objeto Coche
 // Enunciado: Crea un objeto llamado coche con las propiedades marca, modelo, año y velocidadActual. Añade un método acelerar que incremente la velocidad actual en 10 unidades y otro método frenar que disminuya la velocidad actual en 10 unidades. Asegúrate de que la velocidad no sea negativa.
+const coche = {
+  marca: 'Ford',
+  modelo: 'Focus',
+  anio: 1999,
+  velocidadActual: 0,
+  acelerar: function () {
+    this.velocidadActual = this.velocidadActual + 10;
+  },
+  frenar: function() {
+    if (this.velocidadActual >0)
+    this.velocidadActual = this.velocidadActual - 10;
+  }
+
+}
+
+coche.acelerar();
+console.log(coche.velocidadActual);
+coche.acelerar();
+console.log(coche.velocidadActual);
+coche.frenar();
+console.log(coche.velocidadActual);
+coche.frenar();
+console.log(coche.velocidadActual);
+coche.frenar();
+console.log(coche.velocidadActual);
+coche.frenar();
+console.log(coche.velocidadActual);
 
 // 7. Recorrer un objeto
 // Enunciado: Crea un objeto producto con las propiedades nombre, precio, cantidad. Usa un ciclo for...in para imprimir todas las propiedades y sus valores.
