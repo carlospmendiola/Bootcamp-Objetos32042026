@@ -32,10 +32,20 @@ var libro = {
     return `El libro '${this.titulo}' fue escrito por ${this.autor} en ${this.anio}`
   }
 };
-console.log(libro.resumen());
+// console.log(libro.resumen());
 
 // 4. Array de objetos
 // Enunciado: Crea un array llamado estudiantes que contenga tres objetos. Cada objeto debe representar un estudiante con las propiedades: nombre, edad, y notaFinal. Luego, recorre el array e imprime el nombre y la nota final de cada estudiante.
+const estudiantes = [
+  {nombre: 'Mikel', edad: 28, notaFinal: 5},
+  {nombre: 'Anuska',edad: 44, notaFinal: 8},
+  {nombre: 'Jone', edad: 46, notaFinal: 9}
+]
+
+for (let i=0; i<estudiantes.length; i++) {
+  console.log(`El nombre es '${estudiantes[i].nombre}' y la nota final es ${estudiantes[i].notaFinal}`);
+}
+
 
 // 5. Método para calcular la edad
 // Enunciado: Crea un objeto persona con las propiedades nombre, anioNacimiento, y un método llamado calcularEdad que devuelva la edad actual de la persona basado en el año de nacimiento.
